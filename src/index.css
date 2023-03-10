@@ -25,7 +25,6 @@ body {
 #fire {
   font-size: 20px;
 }
-
 .card {
   border-radius: 34px;
 }
@@ -66,8 +65,8 @@ body {
     font-size: 25px;
   }
   #card {
-    display: grid !important;
-    grid-template-columns: auto auto !important;
+    display: grid;
+    grid-template-columns: auto auto;
     justify-content: center;
     width: 45%;
     padding: 0;
