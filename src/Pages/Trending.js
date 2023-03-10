@@ -42,30 +42,28 @@ const Trending = () => {
                   className="col-md-3 col-sm-4 py-3 d-flex justify-content-center g-4"
                   id="card"
                 >
-                  <NavLink
+                  {/* <NavLink
                     to={`movies/${id}`}
                     style={{ color: "white", textDecoration: "none" }}
-                  >
-                    <div className="card bg-dark" key={id}>
-                      <img
-                        src={
-                          poster_path
-                            ? `${img_300}/${poster_path}`
-                            : unavailable
-                        }
-                        className="card-img-top pt-3 pb-0 px-3"
-                      />
-                      <div className="card-body">
-                        <h5 className="card-title text-center fs-5">
-                          {title || name}
-                        </h5>
-                        <div className="d-flex fs-6 align-items-center justify-content-evenly movie">
-                          <div>{media_type === "tv" ? "TV" : "Movie"}</div>
-                          <div>{first_air_date || release_date}</div>
-                        </div>
+                  > */}
+                  <div className="card bg-dark" key={id}>
+                    <img
+                      src={
+                        poster_path ? `${img_300}/${poster_path}` : unavailable
+                      }
+                      className="card-img-top pt-3 pb-0 px-3"
+                    />
+                    <div className="card-body">
+                      <h5 className="card-title text-center fs-5">
+                        {title || name}
+                      </h5>
+                      <div className="d-flex fs-6 align-items-center justify-content-evenly movie">
+                        <div>{media_type === "tv" ? "TV" : "Movie"}</div>
+                        <div>{first_air_date || release_date}</div>
                       </div>
                     </div>
-                  </NavLink>
+                  </div>
+                  {/* </NavLink> */}
                 </div>
                 <AppProvider media_type={media_type} id={id} />
               </>
