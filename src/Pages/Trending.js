@@ -11,6 +11,7 @@ const Trending = () => {
     const data = await fetch(`
     https://api.themoviedb.org/3/trending/all/day?api_key=3d820eab8fd533d2fd7e1514e86292ea&page=${page}`);
     const dataJ = await data.json();
+    console.log(dataJ.results);
     setState(dataJ.results);
   };
 

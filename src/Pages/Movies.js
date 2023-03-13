@@ -47,7 +47,7 @@ const Movies = () => {
             } = Val;
             return (
               <>
-                <div className="col-md-3 col-sm-4 py-3" id="card">
+                <div className="col-md-3 col-sm-4 py-3" id="card" key={id}>
                   <div className="card bg-dark" key={id}>
                     <img
                       src={
