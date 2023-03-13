@@ -5,8 +5,9 @@ import { useGlobalContext } from "../Components/context";
 
 const SingleMovie = () => {
   const { id } = useParams();
-  // const name = useContext(AppContext);
   const { video } = useGlobalContext();
+  // const name = useContext(AppContext);
+
   console.log(video);
   return (
     <>

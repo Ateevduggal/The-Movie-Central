@@ -11,8 +11,8 @@ const AppProvider = ({ children, media_type, id }) => {
       `https://api.themoviedb.org/3/${media_type}/${id}?api_key=3d820eab8fd533d2fd7e1514e86292ea&language=en-US`
     );
     const values = await value.json();
-    // console.log(values);
-    setData(values);
+    console.log(values);
+    setData(values.adult);
   };
 
   const fetchVideo = async () => {
@@ -20,8 +20,8 @@ const AppProvider = ({ children, media_type, id }) => {
       `https://api.themoviedb.org/3/${media_type}/${id}/videos?api_key=3d820eab8fd533d2fd7e1514e86292ea&language=en-US`
     );
     const YTvideo = await ytvideo.json();
-    // console.log(YTvideo);
-    setVideo(YTvideo);
+    console.log(YTvideo, "here");
+    setVideo(YTvideo.results[0].id);
   };
 
   useEffect(() => {
@@ -30,7 +30,9 @@ const AppProvider = ({ children, media_type, id }) => {
   }, []);
 
   return (
-    <AppContext.Provider value={{ video }}>{children}</AppContext.Provider>
+    <AppContext.Provider value={{ video, data }}>
+      {children}
+    </AppContext.Provider>
   );
 };
 //Global Custom Hook
