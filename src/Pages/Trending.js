@@ -5,8 +5,8 @@ import Pagination from "../Components/Pagination";
 import { AppProvider } from "../Components/context";
 const Trending = () => {
   const [state, setState] = useState([]);
-  const [page, setPage] = useState(1);
-
+  const [page, setPage] = useState(1); // initialised the page state with the initial value of 1
+  
   const fetchTrending = async () => {
     const data = await fetch(`
     https://api.themoviedb.org/3/trending/all/day?api_key=3d820eab8fd533d2fd7e1514e86292ea&page=${page}`);
@@ -49,7 +49,7 @@ const Trending = () => {
                     to={`movies/${id}`}
                     style={{ color: "white", textDecoration: "none" }}
                   >
-                    <div className="card bg-dark" key={id}>
+                    <div className="card bg-dark">
                       <img
                         src={
                           poster_path
@@ -57,6 +57,7 @@ const Trending = () => {
                             : unavailable
                         }
                         className="card-img-top pt-3 pb-0 px-3"
+                        alt={title}
                       />
                       <div className="card-body">
                         <h5 className="card-title text-center fs-5">

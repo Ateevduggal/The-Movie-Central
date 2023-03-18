@@ -8,6 +8,12 @@ const Header = () => {
           <div className="d-flex justify-content-center align-items-center w-100 text-uppercase p-3 header">
             <i className="fas fa-video"></i> &nbsp;&nbsp; The Movie Central
           </div>
+          <a
+            href=""
+            className="col-11 header bg-transparent fs-4 py-4 text-end"
+          >
+            How to make ?
+          </a>
         </div>
       </div>
     </>

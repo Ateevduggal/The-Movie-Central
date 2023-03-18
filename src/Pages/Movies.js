@@ -3,11 +3,12 @@ import { img_300, unavailable } from "../Components/config";
 import Pagination from "../Components/Pagination";
 import Genre from "../Components/Genre";
 import useGenre from "../useGenre";
+
 const Movies = () => {
-  const [state, setState] = useState([]);
-  const [page, setPage] = useState(1);
-  const [genre, setGenre] = useState([]);
-  const [value, setValue] = useState([]);
+  const [state, setState] = useState([]); //store the fetched data
+  const [page, setPage] = useState(1); //keep a track of the page numbers
+  const [genre, setGenre] = useState([]); //used to store the origional genre values
+  const [value, setValue] = useState([]); //used to store the selected genre values
   const genreURL = useGenre(value);
 
   const fetchTrending = async () => {
@@ -16,6 +17,7 @@ const Movies = () => {
     const dataJ = await data.json();
     setState(dataJ.results);
   };
+
   useEffect(() => {
     fetchTrending();
   }, [page, genreURL]);

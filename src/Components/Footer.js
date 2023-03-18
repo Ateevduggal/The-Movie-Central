@@ -28,6 +28,7 @@ const Footer = () => {
       id: 4,
     },
   ];
+  const date = new Date().getFullYear();
   return (
     <>
       <div className="container-fluid">
@@ -49,6 +50,10 @@ const Footer = () => {
                 </>
               );
             })}
+            <div className="text-white py-2">Made By: Tekolio Technologies</div>
+            <div className="text-white">
+              Copyright &copy; {date} Tekolio Technologies
+            </div>
           </div>
         </div>
       </div>
