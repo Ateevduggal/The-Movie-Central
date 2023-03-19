@@ -50,9 +50,8 @@ const Footer = () => {
                 </>
               );
             })}
-            <div className="text-white py-2">Made By: Tekolio Technologies</div>
-            <div className="text-white">
-              Copyright &copy; {date} Tekolio Technologies
+            <div className="text-white footer1">
+              Made By: Tekolio Technologies
             </div>
           </div>
         </div>

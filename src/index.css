@@ -57,12 +57,18 @@ body {
   font-size: 20px;
   padding: 0 2%;
 }
+a:hover {
+  color: white;
+}
 
 /*                    Respomsive                      */
 /*                    FOR MOBILE                      */
 @media (min-width: 300px) and (max-width: 576px) {
   .header {
     font-size: 25px;
+  }
+  .header1 {
+    display: none;
   }
   #card {
     display: grid;
@@ -90,6 +96,9 @@ body {
   .buttons {
     font-size: 12px;
   }
+  .footer1 {
+    font-size: 14px;
+  }
 }
 
 /*                            FOR TABLET                  */
@@ -107,5 +116,34 @@ body {
   .button,
   .buttons {
     font-size: 12px;
+  }
+  .header {
+    display: none;
+  }
+  .footer {
+    font-size: 14px;
+  }
+}
+/*                            FOR TABLET                  */
+@media (min-width: 768px) and (max-width: 980px) {
+  .card-img-top {
+    height: 10%;
+    width: 100%;
+  }
+  .card-title {
+    font-size: 15px !important;
+  }
+  .movie {
+    font-size: 13px !important;
+  }
+  .button,
+  .buttons {
+    font-size: 12px;
+  }
+  .header {
+    display: none;
+  }
+  .footer {
+    font-size: 14px;
   }
 }

@@ -10,7 +10,7 @@ const Header = () => {
           </div>
           <a
             href=""
-            className="col-11 header bg-transparent fs-4 py-4 text-end"
+            className="col-11 header header1 bg-transparent fs-4 py-4 text-end"
           >
             How to make ?
           </a>
