@@ -6,7 +6,7 @@ import { AppProvider } from "../Components/context";
 const Trending = () => {
   const [state, setState] = useState([]);
   const [page, setPage] = useState(1); // initialised the page state with the initial value of 1
-  
+
   const fetchTrending = async () => {
     const data = await fetch(`
     https://api.themoviedb.org/3/trending/all/day?api_key=3d820eab8fd533d2fd7e1514e86292ea&page=${page}`);

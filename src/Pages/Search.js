@@ -14,15 +14,18 @@ const Search = () => {
     const { results } = await data.json();
     setContent(results);
   };
+
   useEffect(() => {
     fetchSearch();
   }, []);
 
   const Search = () => {
     fetchSearch();
-    setContent("");
   };
 
+  const Trigger = (e) => {
+    setSearchText(e.target.value);
+  };
   return (
     <>
       <div className="container">
@@ -31,7 +34,7 @@ const Search = () => {
             <input
               type="text"
               placeholder="search..."
-              onChange={(e) => setSearchText(e.target.value)}
+              onChange={Trigger}
               className="form-control-lg col-6 search bg-dark text-white border border-0"
             />
             <button

@@ -9,7 +9,6 @@ body {
 }
 
 .header {
-  cursor: pointer;
   position: fixed;
   background-color: #131416;
   font-size: 35px;
