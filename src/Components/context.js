@@ -7,12 +7,12 @@ const AppProvider = ({ children, media_type, id }) => {
   const [video, setVideo] = useState([]);
 
   const fetchData = async () => {
-    const value = await fetch(
+    const Data = await fetch(
       `https://api.themoviedb.org/3/${media_type}/${id}?api_key=3d820eab8fd533d2fd7e1514e86292ea&language=en-US`
     );
-    const values = await value.json();
+    const DataJ = await Data.json();
     // console.log(values);
-    setData(values.adult);
+    setData(DataJ.adult);
   };
 
   const fetchVideo = async () => {
@@ -20,29 +20,23 @@ const AppProvider = ({ children, media_type, id }) => {
       `https://api.themoviedb.org/3/${media_type}/${id}/videos?api_key=3d820eab8fd533d2fd7e1514e86292ea&language=en-US`
     );
     const YTvideo = await ytvideo.json();
-    console.log(YTvideo, "here");
+    console.log(YTvideo.results[0]);
     setVideo(YTvideo.results[0]);
   };
 
-  // //calling the function fetchData only after the initia render
   useEffect(() => {
     fetchData();
-  }, []);
-
-  // //calling the function fetchVideo only after the initia render
-  useEffect(() => {
     fetchVideo();
   }, []);
 
+  // console.log(video);
   return (
-    <AppContext.Provider value={{ video, data }}>
-      {children}
-    </AppContext.Provider>
+    <AppContext.Provider value={{ video }}>{children}</AppContext.Provider>
   );
 };
 //Global Custom Hook
-const useGlobalContext = () => {
-  return useContext(AppContext);
-};
+// const useGlobalContext = () => {
+//   return useContext(AppContext);
+// };
 
-export { AppContext, AppProvider, useGlobalContext };
+export { AppContext, AppProvider };

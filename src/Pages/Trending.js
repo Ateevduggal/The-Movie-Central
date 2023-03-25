@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 import { img_300, unavailable } from "../Components/config";
+// import { AppProvider } from "../Components/context";
 import Pagination from "../Components/Pagination";
-import { AppProvider } from "../Components/context";
+
 const Trending = () => {
   const [state, setState] = useState([]);
   const [page, setPage] = useState(1); // initialised the page state with the initial value of 1
@@ -11,14 +12,14 @@ const Trending = () => {
     const data = await fetch(`
     https://api.themoviedb.org/3/trending/all/day?api_key=3d820eab8fd533d2fd7e1514e86292ea&page=${page}`);
     const dataJ = await data.json();
-    console.log(dataJ.results);
+    // console.log(dataJ.results);
     setState(dataJ.results);
   };
 
   useEffect(() => {
     fetchTrending();
   }, [page]);
-
+  console.log(state);
   return (
     <>
       <div className="container">
@@ -45,33 +46,31 @@ const Trending = () => {
                   className="col-md-3 col-sm-4 py-3 d-flex justify-content-center g-4"
                   id="card"
                 >
-                  <NavLink
-                    to={`movies/${id}`}
+                  {/* <NavLink
+                    to={}
                     style={{ color: "white", textDecoration: "none" }}
-                  >
-                    <div className="card bg-dark">
-                      <img
-                        src={
-                          poster_path
-                            ? `${img_300}/${poster_path}`
-                            : unavailable
-                        }
-                        className="card-img-top pt-3 pb-0 px-3"
-                        alt={title}
-                      />
-                      <div className="card-body">
-                        <h5 className="card-title text-center fs-5">
-                          {title || name}
-                        </h5>
-                        <div className="d-flex fs-6 align-items-center justify-content-evenly movie">
-                          <div>{media_type === "tv" ? "TV" : "Movie"}</div>
-                          <div>{first_air_date || release_date}</div>
-                        </div>
+                  > */}
+                  <div className="card bg-dark">
+                    <img
+                      src={
+                        poster_path ? `${img_300}/${poster_path}` : unavailable
+                      }
+                      className="card-img-top pt-3 pb-0 px-3"
+                      alt={title}
+                    />
+                    <div className="card-body">
+                      <h5 className="card-title text-center fs-5">
+                        {title || name}
+                      </h5>
+                      <div className="d-flex fs-6 align-items-center justify-content-evenly movie">
+                        <div>{media_type === "tv" ? "TV" : "Movie"}</div>
+                        <div>{first_air_date || release_date}</div>
                       </div>
                     </div>
-                  </NavLink>
+                  </div>
+                  {/* </NavLink> */}
                 </div>
-                <AppProvider media_type={media_type} id={id} />
+                {/* <AppProvider media_type={media_type} id={id} /> */}
               </>
             );
           })}
