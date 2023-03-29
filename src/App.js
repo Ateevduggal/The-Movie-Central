@@ -13,7 +13,7 @@ const App = () => {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/" element={<Trending />} exact /> 
+          <Route path="/" element={<Trending />} exact />
           <Route path="/movies" element={<Movies />} />
           <Route path="/tv" element={<TV />} />
           <Route path="/search" element={<Search />} />
