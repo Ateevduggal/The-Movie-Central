@@ -9,7 +9,8 @@ const Header = () => {
             <i className="fas fa-video"></i> &nbsp;&nbsp; The Movie Central
           </div>
           <a
-            href=""
+            href="https://tekolio.com/how-to-build-a-movie-app-in-react-using-tmdb-api/"
+            target="_blank"
             className="col-11 header header1 bg-transparent fs-4 py-4 text-end"
           >
             How to make ?

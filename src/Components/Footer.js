@@ -28,7 +28,7 @@ const Footer = () => {
       id: 4,
     },
   ];
-  const date = new Date().getFullYear();
+  
   return (
     <>
       <div className="container-fluid">
